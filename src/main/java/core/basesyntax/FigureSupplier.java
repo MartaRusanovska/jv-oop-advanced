@@ -3,11 +3,13 @@ package core.basesyntax;
 import java.util.Random;
 
 public class FigureSupplier {
-    private static final int FIGURE_COUNT = 6; // Кількість твоїх фігур
+    static final int FIGURE_COUNT = 5;
+    private static final int MAX_RANDOM_VALUE = 10;
+    private static final double DEFAULT_RADIUS = 10.0;
     private final Random random = new Random();
     private final ColorSupplier colorSupplier = new ColorSupplier();
 
-    public AbstractFigure getRandomFigure() {
+    public Figure getRandomFigure() {
         int figureType = random.nextInt(FIGURE_COUNT);
         switch (figureType) {
             case 0:
@@ -31,10 +33,10 @@ public class FigureSupplier {
     }
 
     private int getRandomValue() {
-        return random.nextInt(10) + 1;
+        return random.nextInt(MAX_RANDOM_VALUE) + 1;
     }
 
-    public AbstractFigure getDefaultFigure() {
-        return new Circle(Colors.WHITE.name(),10);
+    public Figure getDefaultFigure() {
+        return new Circle(Colors.WHITE.name(),DEFAULT_RADIUS);
     }
 }

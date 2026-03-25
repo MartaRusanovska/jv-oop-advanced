@@ -18,14 +18,15 @@ public class Rectangle extends AbstractFigure {
         return width;
     }
 
-    public double square(double length, double width) {
-        return length * width;
+    @Override
+    public void draw() {
+        System.out.println("Figure: rectangle, area: " + square()
+                + " sq. units, width: " + width + " units, length: " + length
+                + " units, color: " + super.getColor());
     }
 
     @Override
-    public void draw() {
-        System.out.println("Figure: rectangle, area: " + square(length,width)
-                + " sq. units, width: " + width + " units, length: " + length
-                + " units, color: " + super.getColor());
+    public double square() {
+        return length * width;
     }
 }

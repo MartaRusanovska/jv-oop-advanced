@@ -1,9 +1,9 @@
 package core.basesyntax;
 
 public class IsoscelesTrapezoid extends AbstractFigure {
-    private double side1;
-    private double side2;
-    private double height;
+    private final double side1;
+    private final double side2;
+    private final double height;
 
     public IsoscelesTrapezoid(String randomColor, double height, double side1, double side2) {
         super(randomColor);
@@ -24,14 +24,16 @@ public class IsoscelesTrapezoid extends AbstractFigure {
         return side2;
     }
 
-    public double square(double side1, double side2, double height) {
-        return ((side1 + side2) / 2) * height;
+    @Override
+    public void draw() {
+        System.out.println("Figure: isosceles trapezoid, area: " + square()
+                + " sq. units, side1: " + side1 + " units, side2: " + side2
+                + " units, height: " + height
+                + " units, color: " + super.getColor());
     }
 
     @Override
-    public void draw() {
-        System.out.println("This is a isosceles trapezoid with side1 = " + side1
-                + ", side2 = " + side2
-                + " and height = " + height + ". Square = " + square(side1, side2, height));
+    public double square() {
+        return ((side1 + side2) / 2) * height;
     }
 }

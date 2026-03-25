@@ -12,13 +12,14 @@ public class Circle extends AbstractFigure {
         return radius;
     }
 
-    public double square(double radius) {
-        return Math.PI * radius * radius;
+    @Override
+    public void draw() {
+        System.out.println("Figure: circle, area: " + square() + " sq. units, radius: "
+                + radius + " units, color: " + super.getColor());
     }
 
     @Override
-    public void draw() {
-        System.out.println("Figure: circle, area: " + square(radius) + " sq. units, radius: "
-                + radius + " units, color: " + super.getColor());
+    public double square() {
+        return Math.PI * radius * radius;
     }
 }
