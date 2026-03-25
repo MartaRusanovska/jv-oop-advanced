@@ -20,13 +20,13 @@ public class Rectangle extends AbstractFigure {
 
     @Override
     public void draw() {
-        System.out.println("Figure: rectangle, area: " + square()
+        System.out.println("Figure: rectangle, area: " + getArea()
                 + " sq. units, width: " + width + " units, length: " + length
                 + " units, color: " + super.getColor());
     }
 
     @Override
-    public double square() {
+    public double getArea() {
         return length * width;
     }
 }

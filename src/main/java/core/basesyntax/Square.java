@@ -14,12 +14,12 @@ public class Square extends AbstractFigure {
 
     @Override
     public void draw() {
-        System.out.println("Figure: square, area: " + square()
+        System.out.println("Figure: getArea, area: " + getArea()
                 + " sq. units, side: " + side + " units, color: " + super.getColor());
     }
 
     @Override
-    public double square() {
+    public double getArea() {
         return side * side;
     }
 }

@@ -20,13 +20,13 @@ public class RightTriangle extends AbstractFigure {
 
     @Override
     public void draw() {
-        System.out.println("Figure: triangle, area: " + square()
+        System.out.println("Figure: triangle, area: " + getArea()
                 + " sq. units, firstLeg: " + leg1 + " units, secondLeg: " + leg2
                 + " units, color: " + super.getColor());
     }
 
     @Override
-    public double square() {
+    public double getArea() {
         return (leg1 * leg2) / 2;
     }
 }
